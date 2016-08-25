@@ -42,12 +42,12 @@ class QuantBet(object):
 if __name__ == "__main__":
     # Open page
     url = "http://quantbet.com/quiz"
-    quantBet = QuantBet("http://quantbet.com/quiz")
+    quantBet = QuantBet(url)
     a,b = quantBet.get_input_values()
     answer = EuclideanAlgorithm.solve(a,b)
     result = quantBet.submit_answer(answer)
 
-    # Write out the results
+    # Write out the results to a file
     with open("results.html", "w") as f:
         f.write(result)
 
